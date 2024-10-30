@@ -1,8 +1,10 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  root: '.',
-  server: {
-    open: true,
-  }
+  esbuild: {
+    jsxFactory: 'h', 
+    jsxFragment: 'Fragment', 
+    loader: 'jsx',
+    include: /src\/.*\.jsx?$/,
+  },
 });
