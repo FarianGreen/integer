@@ -1,4 +1,4 @@
-import { h, observable, computed } from "sinuous";
+import { html, observable, computed } from "sinuous";
 import Table from "./components/Table";
 import "./style.scss";
 
@@ -19,5 +19,5 @@ fetch("https://jsonplaceholder.typicode.com/users")
 
 computed(() => {
   app.innerHTML = "";
-  app.appendChild(<Table data={data} />);
+  app.append(html`<${Table} data=${data} />`);
 });
